@@ -1,0 +1,102 @@
+import { z } from "zod";
+
+export const ActaSchema = z.object({
+  metadata: z.object({
+    tipo_reunion: z.string().nullable(),
+    comunidad: z.string().nullable(),
+    direccion: z.string().nullable(),
+    fecha_reunion: z.string().nullable(),
+    hora_inicio: z.string().nullable(),
+    hora_fin: z.string().nullable(),
+    lugar: z.string().nullable(),
+    idioma_acta: z.string(),
+  }),
+
+  participantes: z.object({
+    presidente: z.string().nullable(),
+    secretario: z.string().nullable(),
+    administrador: z.string().nullable(),
+
+    asistentes: z.array(
+      z.object({
+        nombre: z.string().nullable(),
+        vivienda_o_coeficiente: z.string().nullable(),
+        presente: z.boolean(),
+      })
+    ),
+
+    representados: z.array(
+      z.object({
+        nombre: z.string().nullable(),
+        representado_por: z.string().nullable(),
+      })
+    ),
+  }),
+
+  orden_del_dia: z.array(
+    z.object({
+      punto: z
+        .union([z.string(), z.number()])
+        .nullable()
+        .transform((v) => (v === null ? null : String(v))),
+      descripcion: z.string().nullable(),
+    })
+  ),
+
+  desarrollo: z.array(
+    z.object({
+      punto: z
+        .union([z.string(), z.number()])
+        .nullable()
+        .transform((v) => (v === null ? null : String(v))),
+      resumen_discusion: z.string().nullable(),
+    })
+  ),
+
+  acuerdos: z.array(
+    z.object({
+      punto: z
+        .union([z.string(), z.number()])
+        .nullable()
+        .transform((v) => (v === null ? null : String(v))),
+      acuerdo: z.string().nullable(),
+      resultado_votacion: z.string().nullable(),
+      votos_a_favor: z.number().nullable(),
+      votos_en_contra: z.number().nullable(),
+      abstenciones: z.number().nullable(),
+      coeficiente_aprobacion: z
+        .union([z.string(), z.number()])
+        .nullable()
+        .transform((v) => (v === null ? null : String(v))),
+      aprobado: z.boolean().nullable(),
+    })
+  ),
+
+  tareas: z.array(
+    z.object({
+      descripcion: z.string().nullable(),
+      responsable: z.string().nullable(),
+      fecha_limite: z.string().nullable(),
+      observaciones: z.string().nullable(),
+    })
+  ),
+
+  incidencias: z.array(
+    z.object({
+      descripcion: z.string().nullable(),
+      requiere_seguimiento: z.boolean().nullable(),
+    })
+  ),
+
+  cierre: z.object({
+    hora_cierre: z.string().nullable(),
+    observaciones_finales: z.string().nullable(),
+  }),
+
+  firmas: z.object({
+    presidente: z.string().nullable(),
+    secretario: z.string().nullable(),
+  }),
+});
+
+export type Acta = z.infer<typeof ActaSchema>;
