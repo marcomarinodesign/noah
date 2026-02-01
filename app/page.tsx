@@ -66,14 +66,17 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
-      <div className="w-full max-w-xl bg-white rounded-xl shadow p-6 space-y-4">
+    <main className="min-h-screen flex items-center justify-center bg-background px-4">
+      <div
+        id="generator"
+        className="w-full max-w-xl bg-card rounded-xl shadow p-6 space-y-4"
+      >
         <h1 className="text-xl font-semibold text-center">
           Generar acta de reunión
         </h1>
 
-        <section className="rounded-xl bg-gray-50 p-5 space-y-4">
-          <p className="text-sm text-gray-600 text-center">
+        <section className="rounded-xl bg-muted p-5 space-y-4">
+          <p className="text-sm text-muted-foreground text-center">
             Pega la transcripción y/o añade información adicional sobre la reunión
           </p>
 
@@ -92,14 +95,14 @@ export default function Home() {
 
             <label
               htmlFor="acta-file"
-              className="w-full h-11 px-4 inline-flex items-center justify-center rounded-md border border-gray-200 bg-transparent text-base font-medium text-gray-900 hover:bg-white cursor-pointer"
+              className="w-full h-10 md:h-11 px-5 inline-flex items-center justify-center rounded-full border border-border bg-transparent text-sm md:text-base font-medium text-foreground hover:bg-background cursor-pointer"
             >
               {file
                 ? `Archivo seleccionado: ${file.name}`
                 : "Elegir archivo (.txt, .docx)"}
             </label>
 
-            <p className="text-xs text-gray-500 text-center">
+            <p className="text-xs text-muted-foreground text-center">
               Si adjuntas un archivo, puedes añadir contexto aquí (opcional)
             </p>
           </div>
@@ -118,7 +121,7 @@ export default function Home() {
             }}
             onDragOver={(e) => e.preventDefault()}
             placeholder="Pega la transcripción aquí…&#10;&#10;Opcional: añade detalles extra (asistentes, fecha/hora, acuerdos, votaciones, tareas, incidencias…)."
-            className="w-full h-56 border border-gray-200 bg-white rounded-md p-3 text-sm focus:outline-none focus:ring"
+            className="w-full h-56 border border-input bg-card rounded-md p-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           />
         </section>
 
@@ -127,7 +130,7 @@ export default function Home() {
         <button
           onClick={handleGenerate}
           disabled={loading}
-          className="w-full h-11 px-4 rounded-md border border-gray-200 bg-gray-100 text-base font-medium text-gray-900 hover:bg-gray-200 disabled:opacity-50"
+          className="w-full h-10 md:h-11 px-5 rounded-full border border-transparent bg-primary text-primary-foreground text-sm md:text-base font-medium hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           {loading ? "Generando acta…" : "Generar acta"}
         </button>
@@ -135,11 +138,20 @@ export default function Home() {
         <button
           onClick={handleDownloadPDF}
           disabled={!pdfUrl || loading}
-          className="w-full h-11 px-4 rounded-md bg-black text-base font-medium text-white hover:opacity-90 disabled:opacity-50"
+          className="w-full h-10 md:h-11 px-5 rounded-full border border-transparent bg-primary text-primary-foreground text-sm md:text-base font-medium hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         >
           Descargar PDF
         </button>
       </div>
+
+      {/* anchor targets for nav/footer (placeholder sections) */}
+      <div id="como-funciona" className="sr-only" />
+      <div id="faq" className="sr-only" />
+      <div id="pricing" className="sr-only" />
+      <div id="contactos" className="sr-only" />
+      <div id="privacidad" className="sr-only" />
+      <div id="terminos" className="sr-only" />
+      <div id="cookies" className="sr-only" />
     </main>
   );
 }
