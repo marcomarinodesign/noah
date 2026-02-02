@@ -4,12 +4,18 @@ type GroqJsonError = Error & { raw?: string; extracted?: string | null };
 
 function getGroqClient() {
   const apiKeyRaw = process.env.GROQ_API_KEY;
-  const apiKey = apiKeyRaw?.trim();
-  if (!apiKey) {
+  const trimmed = apiKeyRaw?.trim();
+  if (!trimmed) {
     throw new Error(
-      "Missing GROQ_API_KEY. Set it in your environment variables (e.g. Vercel Project Settings → Environment Variables)."
+      "Falta `GROQ_API_KEY`. Configúrala en tus variables de entorno (por ejemplo en Vercel: Project Settings → Environment Variables)."
     );
   }
+
+  // Some setups prefix keys with `sk_groq_` (e.g. `sk_groq_gsk_...`).
+  // Groq OpenAI-compatible keys typically start with `gsk_`.
+  const apiKey = trimmed.startsWith("sk_groq_")
+    ? trimmed.slice("sk_groq_".length)
+    : trimmed;
 
   return new OpenAI({
     apiKey,

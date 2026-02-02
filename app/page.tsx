@@ -50,7 +50,33 @@ export default function Home() {
       });
 
       if (!res.ok) {
-        throw new Error("Error generando el acta");
+        const contentType = res.headers.get("content-type") ?? "";
+        let message = "No se ha podido generar el acta.";
+
+        if (contentType.includes("application/json")) {
+          try {
+            const data: unknown = await res.json();
+            if (
+              typeof data === "object" &&
+              data !== null &&
+              "error" in data &&
+              typeof (data as { error?: unknown }).error === "string"
+            ) {
+              message = (data as { error: string }).error;
+            }
+          } catch {
+            // ignore JSON parsing errors
+          }
+        } else {
+          try {
+            const text = await res.text();
+            if (text.trim()) message = text.trim();
+          } catch {
+            // ignore body read errors
+          }
+        }
+
+        throw new Error(message);
       }
 
       const blob = await res.blob();
@@ -58,8 +84,12 @@ export default function Home() {
       setPdfUrl(url);
 
       // Importante: NO abrimos pestaña aquí. Solo al pulsar "Descargar PDF".
-    } catch {
-      setError("No se ha podido generar el acta. Revisa la transcripción.");
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "No se ha podido generar el acta. Revisa la transcripción."
+      );
     } finally {
       setLoading(false);
     }
