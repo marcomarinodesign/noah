@@ -88,6 +88,7 @@ export async function generateActaPDF(acta: Acta, notes?: string) {
   // --- HEADER ---
   let headerX = marginX;
   let logoBottomY: number | null = null;
+  const headerGap = 24;
   try {
     const logoBytes = await getOrganLogoBytes();
     const logo = await pdfDoc.embedJpg(logoBytes);
@@ -118,9 +119,10 @@ export async function generateActaPDF(acta: Acta, notes?: string) {
     headerX
   );
 
-  y -= 20;
+  y -= headerGap;
   if (logoBottomY !== null) {
-    y = Math.min(y, logoBottomY - 10);
+    // Ensure body content starts below the logo block (prevents overlap).
+    y = Math.min(y, logoBottomY - headerGap);
   }
 
   // --- PARTICIPANTES ---
