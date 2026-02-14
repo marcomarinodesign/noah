@@ -1,0 +1,56 @@
+{
+    "comunidad": {
+      "nombre": "LA COMA, 5",
+      "direccion": "C.458",
+      "ciudad": "Sant Cugat del Vallès",
+      "nif": "H64927924"
+    },
+    "cabecera": {
+      "codigo_acta": "PR_A.2.2.2_2",
+      "fecha": "2026-02-03",
+      "hora_inicio": "18:00",
+      "modalidad": "Videoconferència: Microsoft Teams",
+      "presidente": "SOLÁ MARTÍ, ROMAN",
+      "secretario": "ORGAN, S.L."
+    },
+    "orden_dia": [
+      { "punto_id": 1, "titulo": "Aprovació comptes 2025" },
+      { "punto_id": 2, "titulo": "Pressupost 2026" }
+    ],
+    "asistentes": [
+      {
+        "departamento": "1A",
+        "coeficiente": 12.5,
+        "propietario": "Joan Puig",
+        "representante": ""
+      }
+    ],
+    "acuerdos": [
+      {
+        "punto_id": 1,
+        "resumen": "S'aproven els comptes anuals.",
+        "decisiones": [
+          "Aprovació per unanimitat",
+          "Trasllat saldo al següent exercici"
+        ],
+        "resultado": "unanimidad"
+      }
+    ],
+    "fondos": [
+      {
+        "nombre": "Fons Ordinari",
+        "saldo_anterior": 1200,
+        "ingresos": 5000,
+        "gastos": 4200,
+        "saldo_actual": 2000
+      }
+    ],
+    "cargos": {
+      "presidente": "SOLÁ MARTÍ, ROMAN",
+      "vicepresidente": "",
+      "secretario_admin": "ORGAN, S.L."
+    },
+    "cierre": {
+      "hora_fin": "20:00"
+    }
+  }
