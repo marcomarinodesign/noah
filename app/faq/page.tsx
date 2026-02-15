@@ -131,7 +131,7 @@ export default function FaqPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero */}
-      <section className="container mx-auto max-w-4xl px-6 pt-20 md:pt-28 pb-12 md:pb-16">
+      <section className="container mx-auto max-w-4xl px-6 pt-[100px] pb-12 md:pb-16">
         <div className="text-center space-y-6">
           {/* Image Placeholder */}
           <div className="w-full max-w-[760px] h-[180px] mx-auto bg-muted/50 border-2 border-dashed border-border rounded-lg flex items-center justify-center mb-8">

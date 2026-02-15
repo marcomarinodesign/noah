@@ -5,8 +5,8 @@ import { Lock } from "lucide-react";
 
 export default function PricingPage() {
   return (
-    <main className="min-h-screen flex items-center justify-center bg-background px-4">
-      <div className="text-center space-y-6 max-w-md">
+    <main className="min-h-screen flex flex-col items-center bg-background px-4 pt-[100px] pb-12">
+      <div className="flex-1 flex flex-col items-center justify-center text-center space-y-6 max-w-md">
         <div className="inline-flex items-center justify-center size-16 rounded-2xl bg-muted">
           <Lock className="size-8 text-muted-foreground" />
         </div>
