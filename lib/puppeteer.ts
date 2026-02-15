@@ -12,7 +12,7 @@ export async function launchBrowser(): Promise<Browser> {
       args: chromium.default.args,
       defaultViewport: null,
       executablePath: await chromium.default.executablePath(),
-      headless: chromium.default.headless ?? true,
+      headless: true,
     });
   }
 
