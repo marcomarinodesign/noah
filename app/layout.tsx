@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import { LpNavbar1 } from "@/components/pro-blocks/landing-page/lp-navbars/lp-navbar-1";
-import { Footer1 } from "@/components/pro-blocks/landing-page/footers/footer-1";
+import { Footer } from "@/components/footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -30,8 +30,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${sourceSerif.variable} font-sans antialiased`}>
         <LpNavbar1 />
-        <main>{children}</main>
-        <Footer1 />
+        {children}
+        <Footer />
       </body>
     </html>
   );

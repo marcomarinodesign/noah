@@ -1,5 +1,5 @@
-import { CleanLanding } from "@/components/pro-blocks/landing-page/clean-landing";
+import { HeroOnlyLanding } from "@/components/pro-blocks/landing-page/hero-only-landing";
 
 export default function Home() {
-  return <CleanLanding />;
+  return <HeroOnlyLanding />;
 }
