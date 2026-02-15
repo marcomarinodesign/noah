@@ -1,4 +1,4 @@
-interface ActaData {
+export interface ActaData {
   comunidad: {
     nombre: string;
     direccion: string;

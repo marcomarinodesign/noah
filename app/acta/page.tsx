@@ -1,19 +1,19 @@
 "use client";
 
-import ActaTemplate from "./ActaTemplate";
 import data from "@/sample-acta.json";
-import { useRef } from "react";
+import ActaTemplate, { type ActaData } from "@/app/acta/ActaTemplate";
+import { getComunidad } from "@/lib/store/comunidadStore";
 
 export default function ActaPage() {
-  const ref = useRef<HTMLDivElement>(null);
+  const comunidad = getComunidad("1");
+  const idioma = comunidad?.idioma ?? "es";
 
   const handleDownload = async () => {
-    const html = ref.current?.innerHTML;
-
+    const payload = { ...data, idioma };
     const res = await fetch("/api/generate-pdf", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ html })
+      body: JSON.stringify(payload),
     });
 
     const blob = await res.blob();
@@ -26,10 +26,17 @@ export default function ActaPage() {
   };
 
   return (
-    <div>
-      <button onClick={handleDownload}>Descargar PDF</button>
-      <div ref={ref}>
-        <ActaTemplate data={data} />
+    <div className="flex flex-col gap-6 p-6 max-w-4xl mx-auto">
+      <div className="flex items-center justify-end">
+        <button
+          onClick={handleDownload}
+          className="px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded-md hover:bg-gray-800 transition-colors"
+        >
+          Descargar PDF
+        </button>
+      </div>
+      <div className="border rounded-lg bg-white shadow-sm">
+        <ActaTemplate data={data as ActaData} />
       </div>
     </div>
   );

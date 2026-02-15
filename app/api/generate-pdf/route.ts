@@ -1,48 +1,37 @@
-// app/api/generate-pdf/route.ts
-import { NextResponse } from "next/server";
-import { ActaSchema } from "@/app/schema/acta.schema";
-import { generateActaPDF } from "@/lib/pdf";
-
 export const runtime = "nodejs";
+
+import puppeteer from "puppeteer";
+import { NextResponse } from "next/server";
+import { generateActaHtml } from "@/lib/generateActaHtml";
 
 export async function POST(req: Request) {
   try {
-    let body: unknown;
-    try {
-      body = await req.json();
-    } catch {
-      return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
-    }
+    const data = await req.json();
 
-    const parsed = ActaSchema.safeParse(body);
-    if (!parsed.success) {
-      return NextResponse.json(
-        {
-          error: "Invalid acta structure",
-          issues: parsed.error.issues,
-        },
-        { status: 422 }
-      );
-    }
+    const html = generateActaHtml(data);
 
-    const notes =
-      typeof (body as { notes?: string }).notes === "string"
-        ? (body as { notes?: string }).notes
-        : undefined;
+    const browser = await puppeteer.launch({
+      headless: true,
+    });
 
-    const pdfBytes = await generateActaPDF(parsed.data, notes);
+    const page = await browser.newPage();
+    await page.setContent(html, { waitUntil: "networkidle0" });
 
-    return new Response(Buffer.from(pdfBytes), {
+    const pdf = await page.pdf({
+      format: "A4",
+      printBackground: true,
+    });
+
+    await browser.close();
+
+    return new NextResponse(Buffer.from(pdf), {
       headers: {
         "Content-Type": "application/pdf",
-        "Content-Disposition": 'attachment; filename="acta.pdf"',
+        "Content-Disposition": "attachment; filename=acta.pdf",
       },
     });
   } catch (error) {
     console.error(error);
-    return NextResponse.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return new NextResponse("PDF generation failed", { status: 500 });
   }
 }
