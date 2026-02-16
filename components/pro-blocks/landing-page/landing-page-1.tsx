@@ -20,7 +20,7 @@ const STEPS = [
     icon: <Upload className="size-7" strokeWidth={1.5} />,
   },
   {
-    title: "Memora lo estructura automáticamente",
+    title: "Noah lo estructura automáticamente",
     description:
       "La información se organiza en un acta formal: participantes, orden del día, acuerdos y tareas.",
     icon: <Sparkles className="size-7" strokeWidth={1.5} />,
@@ -66,7 +66,7 @@ export function LandingPage1() {
         secondaryCta={{ label: "Ver precios", href: "/pricing" }}
       />
 
-      <LogosSection title="Confían en Memora" />
+      <LogosSection title="Confían en Noah" />
 
       <FeaturesSection1
         title="Cómo funciona"
@@ -75,7 +75,7 @@ export function LandingPage1() {
       />
 
       <BentoSection1
-        title="Por qué Memora"
+        title="Por qué Noah"
         subtitle="Menos trabajo manual, más claridad."
         cards={BENEFITS}
       />

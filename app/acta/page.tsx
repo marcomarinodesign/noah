@@ -43,9 +43,9 @@ export default function ActaPage() {
   };
 
   return (
-    <main className="min-h-screen bg-background">
+    <main className="min-h-screen" style={{ backgroundColor: "#f0efea" }}>
       {/* Header */}
-      <section className="border-b border-border bg-background sticky top-0 z-10">
+      <section className="border-b border-border sticky top-0 z-10" style={{ backgroundColor: "#f0efea" }}>
         <div className="container mx-auto max-w-6xl px-6 py-4">
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">

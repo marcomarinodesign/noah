@@ -13,7 +13,7 @@ export function SponsorsSection() {
   return (
     <section id="sponsors" className="max-w-[75%] mx-auto pb-24 sm:pb-32">
       <h2 className="text-lg md:text-xl text-center mb-6">
-        Confían en Memora
+        Confían en Noah
       </h2>
 
       <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-60">

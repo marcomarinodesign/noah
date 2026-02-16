@@ -25,7 +25,7 @@ export function CommunitySection() {
               </CardTitle>
             </CardHeader>
             <CardContent className="lg:w-[80%] text-xl text-muted-foreground">
-              Únete a los equipos que ya usan Memora. Genera actas profesionales
+              Únete a los equipos que ya usan Noah. Genera actas profesionales
               en segundos.
             </CardContent>
 

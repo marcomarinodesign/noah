@@ -25,7 +25,7 @@ export function CleanLanding() {
 
           {/* Supporting text */}
           <p className="max-w-2xl text-body text-muted-foreground">
-            Sube el audio de tu reunión o pega la transcripción. Memora usa IA
+            Sube el audio de tu reunión o pega la transcripción. Noah usa IA
             para estructurar automáticamente toda la información en un acta
             formal lista para compartir.
           </p>
@@ -208,7 +208,7 @@ export function CleanLanding() {
                     Ahorra más de 2 horas por reunión
                   </h3>
                   <p className="text-body-sm text-gray-700 max-w-2xl">
-                    La redacción manual de actas puede tomar horas. Con Memora,
+                    La redacción manual de actas puede tomar horas. Con Noah,
                     todo el proceso se reduce a menos de 2 minutos. Más tiempo
                     para lo que realmente importa.
                   </p>

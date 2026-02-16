@@ -13,7 +13,7 @@ const DEFAULT_LOGOS = [
 ];
 
 export function LogosSection({
-  title = "Confían en Memora",
+  title = "Confían en Noah",
   logos = DEFAULT_LOGOS,
   className = "",
 }: LogosSectionProps) {

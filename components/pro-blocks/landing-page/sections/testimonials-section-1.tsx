@@ -14,7 +14,7 @@ interface TestimonialsSection1Props {
 const PLACEHOLDER_TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      "Memora ha transformado cómo gestionamos las actas de reunión. Ahorramos horas cada semana.",
+      "Noah ha transformado cómo gestionamos las actas de reunión. Ahorramos horas cada semana.",
     author: "Cliente 1",
     role: "Equipo de producto",
   },
@@ -28,7 +28,7 @@ const PLACEHOLDER_TESTIMONIALS: Testimonial[] = [
 
 export function TestimonialsSection1({
   title = "Lo que dicen nuestros usuarios",
-  subtitle = "Equipos que ya confían en Memora",
+  subtitle = "Equipos que ya confían en Noah",
   testimonials = PLACEHOLDER_TESTIMONIALS,
   className = "",
 }: TestimonialsSection1Props) {

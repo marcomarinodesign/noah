@@ -23,7 +23,7 @@ export function HeroOnlyLanding() {
 
             {/* Supporting text */}
             <p className="max-w-2xl text-body text-muted-foreground">
-              Sube el audio de tu reunión o pega la transcripción. Memora usa IA
+              Sube el audio de tu reunión o pega la transcripción. Noah usa IA
               para estructurar automáticamente toda la información en un acta
               formal lista para compartir.
             </p>

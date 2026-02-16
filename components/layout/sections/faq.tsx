@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const FAQList = [
   {
-    question: "¿Qué formatos de documento acepta Memora?",
+    question: "¿Qué formatos de documento acepta Noah?",
     answer:
       "Puedes subir transcripciones en texto, archivos .txt o .docx. Pegar texto directamente también funciona.",
     value: "item-1",

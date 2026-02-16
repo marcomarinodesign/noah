@@ -15,7 +15,7 @@ interface FaqPreviewSectionProps {
 
 const PLACEHOLDER_FAQ: FaqItem[] = [
   {
-    question: "¿Qué formatos de documento acepta Memora?",
+    question: "¿Qué formatos de documento acepta Noah?",
     answer:
       "Puedes subir transcripciones en texto, archivos .txt o .docx. Próximamente más formatos.",
   },

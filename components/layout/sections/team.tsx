@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/card";
 
 const teamList = [
-  { firstName: "Equipo", lastName: "Memora", positions: ["Producto", "Desarrollo"] },
+  { firstName: "Equipo", lastName: "Noah", positions: ["Producto", "Desarrollo"] },
   { firstName: "Cliente", lastName: "1", positions: ["Beta tester"] },
   { firstName: "Cliente", lastName: "2", positions: ["Early adopter"] },
 ];
@@ -20,7 +20,7 @@ export function TeamSection() {
         </h2>
 
         <h2 className="text-3xl md:text-4xl text-center font-bold">
-          Quién está detrás de Memora
+          Quién está detrás de Noah
         </h2>
       </div>
 

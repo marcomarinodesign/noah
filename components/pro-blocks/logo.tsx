@@ -13,8 +13,8 @@ export const Logo: React.FC<LogoProps> = ({
 }) => {
   return (
     <Image
-      src="/brand/memora-logo.png"
-      alt="memora"
+      src="/images/logo.png"
+      alt="Noah Estate"
       width={width}
       height={height}
       priority

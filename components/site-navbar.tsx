@@ -63,8 +63,8 @@ export function SiteNavbar() {
             onClick={() => setOpen(false)}
           >
             <Image
-              src="/brand/memora-logo.png"
-              alt="memora"
+              src="/images/logo.png"
+              alt="Noah Estate"
               width={80}
               height={18}
               priority

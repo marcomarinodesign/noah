@@ -1,5 +1,5 @@
-import { HeroOnlyLanding } from "@/components/pro-blocks/landing-page/hero-only-landing";
+import { FigmaHomepage } from "@/components/pro-blocks/landing-page/figma-homepage";
 
 export default function Home() {
-  return <HeroOnlyLanding />;
+  return <FigmaHomepage />;
 }

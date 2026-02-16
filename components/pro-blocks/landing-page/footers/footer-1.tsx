@@ -30,8 +30,8 @@ export function Footer1() {
           {/* Logo Section */}
           <Link href="/" aria-label="Go to homepage">
             <Image
-              src="/brand/memora.svg"
-              alt="memora"
+              src="/images/logo.png"
+              alt="Noah Estate"
               width={59}
               height={9}
               priority
@@ -65,7 +65,7 @@ export function Footer1() {
           <p className="text-white/60 text-center lg:text-left">
             <span>Copyright © {new Date().getFullYear()}</span>{" "}
             <Link href="/" className="hover:underline">
-              memora
+              Noah Estate
             </Link>
             . All rights reserved.
           </p>

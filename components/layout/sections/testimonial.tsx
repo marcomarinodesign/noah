@@ -14,7 +14,7 @@ const reviewList = [
     name: "Cliente 1",
     userName: "Product Manager",
     comment:
-      "Memora ha transformado cómo gestionamos las actas. Ahorramos horas cada semana.",
+      "Noah ha transformado cómo gestionamos las actas. Ahorramos horas cada semana.",
   },
   {
     name: "Cliente 2",

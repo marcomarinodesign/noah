@@ -41,7 +41,7 @@ export function BenefitsSection() {
             Tu atajo al éxito
           </h2>
           <p className="text-xl text-muted-foreground mb-8">
-            Memora transforma reuniones largas en actas profesionales. Menos
+            Noah transforma reuniones largas en actas profesionales. Menos
             trabajo manual, más claridad para tu equipo.
           </p>
         </div>

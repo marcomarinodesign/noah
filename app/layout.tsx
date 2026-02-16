@@ -17,8 +17,8 @@ const sourceSerif = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
-  title: "memora",
-  description: "Genera actas de reunión en PDF.",
+  title: "noah.estate - De reunión a acta profesional en minutos",
+  description: "Sube el audio de tu reunión o pega la transcripción. Noah usa IA para estructurar automáticamente toda la información en un acta formal lista para compartir.",
 };
 
 export default function RootLayout({

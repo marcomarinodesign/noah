@@ -30,7 +30,7 @@ export function ContactSection() {
                 <div className="font-bold">Escríbenos</div>
               </div>
 
-              <div>support@memora.app</div>
+              <div>support@noah.estate</div>
             </div>
 
             <div>
@@ -39,7 +39,7 @@ export function ContactSection() {
                 <div className="font-bold">Email</div>
               </div>
 
-              <div>support@memora.app</div>
+              <div>support@noah.estate</div>
             </div>
 
             <div>
