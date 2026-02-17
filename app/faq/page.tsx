@@ -133,27 +133,11 @@ export default function FaqPage() {
   return (
     <main className="min-h-screen" style={pageStyle}>
       {/* Hero */}
-      <section className="container mx-auto max-w-4xl px-6 pt-[100px] pb-12 md:pb-16">
+      <section
+        className="container mx-auto max-w-4xl px-6 pb-12 md:pb-16"
+        style={{ paddingTop: "var(--space-10)" }}
+      >
         <div className="text-center space-y-6">
-          {/* Image Placeholder */}
-          <div
-            className="w-full max-w-[760px] h-[180px] mx-auto border-2 border-dashed rounded-lg flex items-center justify-center mb-8"
-            style={{
-              backgroundColor: "var(--color-surface-2)",
-              borderColor: "var(--color-border-default)",
-              borderRadius: "var(--radius-lg)",
-            }}
-          >
-            <span
-              style={{
-                fontSize: "var(--text-sm)",
-                color: "var(--color-text-secondary)",
-              }}
-            >
-              760 × 180 px
-            </span>
-          </div>
-
           <h1
             className="max-w-[800px] mx-auto heading-xl"
             style={{

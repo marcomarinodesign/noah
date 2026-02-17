@@ -42,7 +42,7 @@ function buildOpeningParagraphCa(vm: PdfActaViewModel): string {
   return `A ${l}, a ${f}, essent les ${h} hores, es celebra degudament convocada la Junta General Ordinària de la Comunitat de Propietaris <strong>${n}</strong>, amb domicili a ${d} i NIF ${ni}, sota la presidència de D./Dna. ${p} i actuant com a Secretari-Administrador ${s}, desenvolupant-se la sessió segons el següent ordre del dia:`;
 }
 
-/** Centralized PDF layout: A4, fixed header. Body padding-top reserves space so header does not overlap (avoids Puppeteer margin issues). */
+/** Centralized PDF layout: A4. Header only on first page (print: relative); screen preview uses fixed. */
 const LAYOUT_STYLES = `
   @page { size: A4; margin: 25mm; }
   * { box-sizing: border-box; }
@@ -131,7 +131,11 @@ const LAYOUT_STYLES = `
   }
   .page-break-inside-avoid { page-break-inside: avoid; }
   @media print {
-    body { padding: 140px 0 0 0; }
+    .pdf-header {
+      position: relative;
+      width: 100%;
+    }
+    body { padding: 0; }
     .section { page-break-inside: avoid; }
   }
 `;
