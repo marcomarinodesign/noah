@@ -1,17 +1,22 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export function FigmaHomepage() {
   return (
     <main
       className="h-full min-h-[800px]"
-      style={{ backgroundColor: "#f0efea" }}
+      style={{ backgroundColor: "var(--color-bg-base)" }}
     >
       {/* Hero Section */}
-      <section className="mx-auto flex max-w-[1024px] flex-col items-center justify-center px-6 py-0 text-center md:py-0">
+      <section
+        className="mx-auto flex max-w-[1024px] flex-col items-center justify-center px-6 py-0 text-center md:py-0"
+      >
         {/* Illustration (responsive variants) */}
-        <div className="mb-12 md:mb-16 w-full max-w-[760px]">
+        <div
+          className="w-full max-w-[760px]"
+          style={{ marginBottom: "var(--space-12)" }}
+        >
           <picture>
             <source
               media="(max-width: 768px)"
@@ -32,12 +37,14 @@ export function FigmaHomepage() {
 
         {/* Main Headline */}
         <h1
-          className="mx-auto mb-6 max-w-[800px] text-center text-black"
+          className="mx-auto max-w-[800px] text-center"
           style={{
-            fontSize: "clamp(40px, 8vw, 64px)",
-            fontWeight: 800,
-            lineHeight: "1.2",
-            letterSpacing: "-0.02em",
+            fontSize: "var(--text-display)",
+            fontWeight: "var(--weight-bold)",
+            lineHeight: "var(--leading-tight)",
+            letterSpacing: "var(--tracking-tight)",
+            color: "var(--color-text-primary)",
+            marginBottom: "var(--space-6)",
           }}
         >
           De reunión a acta profesional en minutos
@@ -45,12 +52,13 @@ export function FigmaHomepage() {
 
         {/* Description */}
         <p
-          className="mx-auto mb-8 max-w-[672px] text-center"
+          className="mx-auto max-w-[672px] text-center"
           style={{
-            fontSize: "clamp(16px, 2vw, 18px)",
-            fontWeight: 400,
-            lineHeight: "1.6",
-            color: "#0f172a",
+            fontSize: "var(--text-lg)",
+            fontWeight: "var(--weight-regular)",
+            lineHeight: "var(--leading-normal)",
+            color: "var(--color-text-secondary)",
+            marginBottom: "var(--space-8)",
           }}
         >
           Sube el audio de tu reunión o pega la transcripción. Noah usa IA
@@ -58,45 +66,23 @@ export function FigmaHomepage() {
           lista para compartir.
         </p>
 
-        {/* CTAs */}
-        <div className="flex flex-col gap-4 sm:flex-row sm:gap-4">
-          <button
-            className="inline-flex items-center justify-center transition-colors hover:bg-black/90"
-            style={{
-              backgroundColor: "#000000",
-              color: "#ffffff",
-              borderRadius: "8px",
-              padding: "12px 20px",
-              fontSize: "18px",
-              fontWeight: 600,
-              lineHeight: "25.2px",
-              minHeight: "52px",
-              border: "none",
-              cursor: "pointer",
-            }}
-            onClick={() => window.location.href = "/generar-acta"}
+        {/* CTAs — design system: btn + variants + size */}
+        <div
+          className="flex flex-col sm:flex-row"
+          style={{ gap: "var(--space-4)" }}
+        >
+          <Link
+            href="/generar-acta"
+            className="btn btn-primary btn-lg"
           >
             Generar acta gratis
-          </button>
-
-          <button
-            className="inline-flex items-center justify-center transition-colors hover:bg-gray-50"
-            style={{
-              backgroundColor: "#ffffff",
-              color: "#000000",
-              borderRadius: "8px",
-              padding: "12px 20px",
-              fontSize: "18px",
-              fontWeight: 600,
-              lineHeight: "25.2px",
-              minHeight: "52px",
-              border: "1px solid #000000",
-              cursor: "pointer",
-            }}
-            onClick={() => window.location.href = "/faq"}
+          </Link>
+          <Link
+            href="/faq"
+            className="btn btn-outline btn-lg"
           >
             Cómo funciona
-          </button>
+          </Link>
         </div>
       </section>
     </main>
