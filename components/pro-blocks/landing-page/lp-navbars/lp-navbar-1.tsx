@@ -54,11 +54,11 @@ export function LpNavbar1() {
           onClick={() => setOpen(false)}
         >
           <Image
-            src="/images/logo.png"
-            alt="minutbook"
-            width={140}
-            height={30}
-            style={{ height: "30px", width: "auto" }}
+            src="/brand/Green_Logo.svg"
+            alt="Noah"
+            width={93}
+            height={20}
+            style={{ height: "20px", width: "auto" }}
             priority
           />
         </Link>

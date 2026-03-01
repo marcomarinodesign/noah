@@ -134,12 +134,11 @@ export function Footer() {
           />
           <Link href="/" className="shrink-0" aria-label="Noah - Inicio">
             <Image
-              src="/images/logo.png"
+              src="/brand/White_Logo.svg"
               alt="Noah"
               width={136}
               height={30}
               className="h-8 w-auto opacity-95 md:h-[30px]"
-              style={{ filter: "brightness(0) invert(1)" }}
             />
           </Link>
           <div
@@ -155,12 +154,11 @@ export function Footer() {
           <div className="flex flex-col gap-5">
             <Link href="/" className="inline-block w-fit">
               <Image
-                src="/images/logo.png"
+                src="/brand/White_Logo.svg"
                 alt="Noah"
                 width={120}
                 height={33}
                 className="h-7 w-auto opacity-95 md:h-8"
-                style={{ filter: "brightness(0) invert(1)" }}
               />
             </Link>
             <div
